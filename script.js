@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
       year: "2023",
             media: {
         type: "local-video",
-        src: "videos/PL-2324-Gordon-Goal.mp4",
+        src: "./PL-2324-Gordon-Goal.mp4",,
         poster: "images/var-room-logo.webp",
         startSeconds: 0,
         caption: "63분 앤서니 고든 결승골 및 VAR 판독 장면 (아스날 공식 하이라이트) — 클릭 시 해당 장면부터 재생"
