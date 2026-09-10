@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAR Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar-left">
+      <div class="sidebar-inner">
+        <h1 class="brand-title">사례 목록</h1>
+        <p class="brand-subtitle">Case archive by incident type</p>
+
+        <div class="case-filter-panel">
+          <div class="search-panel" style="position: relative;">
+            <input
+              type="text"
+              id="caseSearch"
+              class="case-search-input"
+              placeholder="팀명, 대회, 연도로 검색 (예: 아스날, Arsenal, PL)"
+              autocomplete="off"
+            />
+            <div class="team-suggestion-box" id="teamSuggestionBox"></div>
+          </div>
+
+          <div class="tag-filter-list" id="tagFilterList">
+            <button class="tag-chip" data-tag="PL" type="button">#PL</button>
+            <button class="tag-chip" data-tag="LL" type="button">#LL</button>
+            <button class="tag-chip" data-tag="SA" type="button">#SA</button>
+            <button class="tag-chip" data-tag="BL" type="button">#BL</button>
+            <button class="tag-chip" data-tag="L1" type="button">#L1</button>
+            <button class="tag-chip" data-tag="WC" type="button">#WC</button>
+            <button class="tag-chip" data-tag="UCL" type="button">#UCL</button>
+            <button class="tag-chip" data-tag="UEL" type="button">#UEL</button>
+            <button class="tag-chip" data-tag="UECL" type="button">#UECL</button>
+            <button class="tag-chip" data-tag="2023" type="button">#2023</button>
+            <button class="tag-chip" data-tag="2024" type="button">#2024</button>
+          </div>
+
+          <div class="active-filter-bar" id="activeFilterBar"></div>
+        </div>
+
+        <div class="case-list grouped-case-list" id="caseListContainer"></div>
+      </div>
+    </aside>
+
+    <main class="main-panel">
+      <section class="viewer-panel">
+
+        <div class="case-info-card">
+          <div class="case-header-row">
+            <div class="case-header-left">
+              <p class="case-no">Case No. 001</p>
+              <h2 class="case-title">Possible Penalty</h2>
+              <p class="case-subtitle">수비수가 박스 안에서 공격수와 접촉한 장면.</p>
+              <div class="case-header-tags" id="caseHeaderTags"></div>
+            </div>
+
+            <div class="case-header-right case-meta-right">
+              <p class="case-competition">Competition: Premier League</p>
+              <p class="case-date">Date: 2023.07.16</p>
+              <p class="case-venue">Venue: London</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="video-card">
+          <div class="video-placeholder">
+            <p>[ Video / Multi-angle scene placeholder ]</p>
+          </div>
+        </div>
+        <p class="video-caption" id="videoCaption"></p>
+
+        <div class="summary-card">
+          <h3>사건 요약</h3>
+          <p class="case-summary">수비수가 박스 안에서 공격수와 접촉한 장면.</p>
+        </div>
+
+        <div class="verdict-card">
+          <h3>최종 판정 / 정심 여부</h3>
+          <p class="verdict-content">최종 판정: No Penalty / 정심 여부 검토 필요</p>
+        </div>
+
+      </section>
+    </main>
+
+    <aside class="sidebar-right">
+      <div class="chat-panel">
+        <div class="chat-header">
+          <h2>AI Referee Discussion</h2>
+          <p>IFAB 규정 기반 판정 토론 인터페이스</p>
+        </div>
+
+        <div class="quick-questions">
+          <button class="chip" type="button">이 장면에서 반칙이 성립하나요?</button>
+          <button class="chip" type="button">VAR 개입 기준에 해당하나요?</button>
+          <button class="chip" type="button">핵심 판정 포인트는 무엇인가요?</button>
+        </div>
+
+        <div class="chat-messages" id="chatMessages">
+          <div class="message ai">
+            이 장면은 접촉 강도, 볼 선점 여부, 파울의 명확성을 중심으로 검토할 수 있습니다.
+          </div>
+        </div>
+
+        <form class="chat-input-bar" autocomplete="off">
+          <input
+            type="text"
+            id="userInput"
+            placeholder="판정 의견이나 질문을 입력하세요"
+          />
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </aside>
+  </div>
+
+  <script src="team-index.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
